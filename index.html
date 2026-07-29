@@ -1,369 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <title>QA Engineer Portfolio</title>
-  <style>
-    /* RESET & CORE DARK THEME */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background-color: #000000;
-      color: #e5e5e5;
-      line-height: 1.6;
-      padding-top: 70px;
-    }
-    a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-    
-    /* NAVIGATION BAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10, 10, 10, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #222222;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 5%;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.95rem;
-      color: #888888;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover {
-      color: #ffffff;
-    }
+    <!-- ======================================
+         META
+    ======================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* CONTAINER LAYOUT */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    section {
-      margin-bottom: 80px;
-    }
-    h2 {
-      font-size: 1.8rem;
-      color: #ffffff;
-      margin-bottom: 25px;
-      border-bottom: 1px solid #222222;
-      padding-bottom: 10px;
-    }
+    <title>Seif Zoair | Software Tester</title>
 
-    /* HERO SECTION */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      padding: 40px 0;
-    }
-    .hero-text {
-      flex: 1;
-    }
-    .hero-text h1 {
-      font-size: 2.8rem;
-      color: #ffffff;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-    .hero-text p {
-      color: #a1a1a1;
-      font-size: 1.15rem;
-      margin-bottom: 25px;
-    }
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #333333;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #ffffff;
-      color: #000000;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: opacity 0.2s ease;
-    }
-    .btn:hover {
-      opacity: 0.9;
-    }
+    <meta name="description"
+        content="Software Tester specialising in Manual Testing, API Testing, Test Documentation and Quality Assurance.">
 
-    /* SKILLS GRID */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .skill-card {
-      background-color: #0a0a0a;
-      border: 1px solid #222222;
-      border-radius: 8px;
-      padding: 20px;
-    }
-    .skill-card h3 {
-      font-size: 1.1rem;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-    .skill-card ul {
-      list-style: none;
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    .skill-card li {
-      margin-bottom: 6px;
-    }
+    <link rel="icon" href="assets/favicon.ico">
 
-    /* PROJECTS & ARTIFACTS */
-    .project-card {
-      background-color: #0a0a0a;
-      border: 1px solid #222222;
-      border-radius: 8px;
-      padding: 25px;
-      margin-bottom: 25px;
-    }
-    .project-card h3 {
-      color: #ffffff;
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-    .project-card p {
-      color: #a1a1a1;
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-    }
-    .tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
-    .tag {
-      background-color: #1a1a1a;
-      border: 1px solid #333333;
-      color: #cccccc;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-    }
-    .project-links a {
-      font-size: 0.9rem;
-      color: #ffffff;
-      text-decoration: underline;
-      margin-right: 15px;
-    }
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-/* CONTACT ICONS STYLING */
-.contact-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-.contact-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: #0a0a0a;
-  border: 1px solid #222222;
-  border-radius: 50%; /* Circle shape */
-  color: #ffffff;
-  font-size: 1.3rem;
-  transition: all 0.2s ease;
-}
-.contact-icon:hover {
-  background-color: #ffffff;
-  color: #000000; /* Inverts color on hover */
-  border-color: #ffffff;
-  transform: translateY(-3px);
-}
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #555555;
-      font-size: 0.85rem;
-      border-top: 1px solid #111111;
-    }
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .hero-text h1 {
-        font-size: 2.2rem;
-      }
-      .contact-links {
-        flex-direction: column;
-      }
-    }
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">Seif Zoair</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- ======================================
+            NAVIGATION
+    ======================================= -->
 
-  <div class="container">
+    <header id="header">
 
-    <!-- HERO SECTION -->
-    <section id="about" class="hero">
-      <div class="hero-text">
-        <h1>Software Tester</h1>
-        <p>Specializing in manual testing, API validation, and test documentation. Focused on finding critical defects and ensuring high-quality software releases.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-      </div>
-      <!-- REPLACE PROFILE IMAGE SRC BELOW -->
-      <img src="profile.jpg" alt="Profile Picture" class="profile-img" />
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                Seif Zoair
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#skills">Skills</a></li>
+
+                <li><a href="#projects">Projects</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ======================================
+            HERO
+    ======================================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content fade-up">
+
+            <p class="hero-intro">
+                Hello, I'm
+            </p>
+
+            <h1>
+                Seif Zoair
+            </h1>
+
+            <h2 id="typing-text">
+                Software Tester
+            </h2>
+
+            <p class="hero-description">
+
+                Passionate about software quality, manual testing,
+                API validation, bug reporting and creating reliable
+                testing documentation that helps teams ship
+                high-quality products.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Get in Touch
+                </a>
+
+                <a href="assets/cv.pdf"
+                    target="_blank"
+                    class="btn btn-secondary">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    View CV
+
+                </a>
+
+                <a href="assets/cv.pdf"
+                    download
+                    class="btn btn-outline">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download CV
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image fade-up">
+
+            <img
+                src="assets/profile.jpg"
+                alt="Seif Zoair">
+
+        </div>
+
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills">
-      <h2>Technical Stack</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Testing Methods</h3>
-          <ul>
-            <li>Functional Testing</li>
-            <li>API Validation</li>
-            <li>Regression Testing</li>
-            <li>Boundary Value Analysis</li>
-          </ul>
+    <!-- ======================================
+            ABOUT
+    ======================================= -->
+
+    <section id="about" class="section">
+
+        <div class="section-title">
+
+            <span>About Me</span>
+
+            <h2>Who I Am</h2>
+
         </div>
-        <div class="skill-card">
-          <h3>Tools & Software</h3>
-          <ul>
-            <li>Jira / Confluence</li>
-            <li>Postman</li>
-            <li>Git & GitHub</li>
-            <li>Chrome DevTools</li>
-          </ul>
+
+        <div class="about-content">
+
+            <p>
+
+                I am a Software Tester focused on delivering
+                high-quality software through detailed manual
+                testing, API validation, structured documentation,
+                and effective defect reporting.
+
+            </p>
+
+            <p>
+
+                I enjoy analysing systems, identifying edge cases,
+                collaborating with developers, and ensuring every
+                release meets quality standards.
+
+            </p>
+
         </div>
-        <div class="skill-card">
-          <h3>Documentation</h3>
-          <ul>
-            <li>Test Plans & Suites</li>
-            <li>Defect/Bug Reports</li>
-            <li>Gherkin / BDD Scenarios</li>
-            <li>Traceability Matrix</li>
-          </ul>
-        </div>
-      </div>
+
     </section>
 
-    <!-- PROJECTS & TEST ARTIFACTS SECTION -->
-    <section id="projects">
-      <h2>Featured QA Projects</h2>
+    <!-- ======================================
+            SKILLS
+    ======================================= -->
 
-      <!-- Project 1 -->
-      <div class="project-card">
-        <h3>E-Commerce Web Application Suite</h3>
-        <p>Executed end-to-end testing covering user registration, inventory search, cart operations, and checkout validation. Created structured test suites and logged defects with detailed logs.</p>
-        <div class="tags">
-          <span class="tag">Manual Testing</span>
-          <span class="tag">Jira</span>
-          <span class="tag">Test Cases</span>
-          <span class="tag">Bug Reporting</span>
-        </div>
-        <div class="project-links">
-          <!-- REPLACE LINKS BELOW WITH YOUR ACTUAL NOTION/GITHUB URLS -->
-          <a href="https://github.com" target="_blank">View Test Suite (GitHub)</a>
-          <a href="https://notion.so" target="_blank">View Bug Reports (Notion)</a>
-        </div>
-      </div>
+    <section id="skills" class="section">
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h3>REST API Testing Suite (Postman)</h3>
-        <p>Built and executed Postman collections to validate backend API endpoints. Written assertions for response status codes, schema validation, payload structures, and response times.</p>
-        <div class="tags">
-          <span class="tag">API Testing</span>
-          <span class="tag">Postman</span>
-          <span class="tag">JSON</span>
-          <span class="tag">REST APIs</span>
+        <div class="section-title">
+
+            <span>Skills</span>
+
+            <h2>Technical Stack</h2>
+
         </div>
-        <div class="project-links">
-          <a href="https://github.com" target="_blank">Postman Collection Repo</a>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-bug"></i>
+
+                <h3>Manual Testing</h3>
+
+                <p>
+                    Functional Testing<br>
+                    Regression Testing<br>
+                    Smoke Testing<br>
+                    Exploratory Testing
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-server"></i>
+
+                <h3>API Testing</h3>
+
+                <p>
+
+                    Postman<br>
+                    REST APIs<br>
+                    JSON Validation<br>
+                    Status Code Testing
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <h3>Documentation</h3>
+
+                <p>
+
+                    Test Cases<br>
+                    Bug Reports<br>
+                    Test Plans<br>
+                    Traceability Matrix
+
+                </p>
+
+            </div>
+
         </div>
-      </div>
+
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-      <h2>Contact & Profiles</h2>
-      <p style="color: #a1a1a1;">Interested in collaborating or discussing QA roles? Reach out through any of the channels below.</p>
-    <div class="contact-links">
-  <!-- Phone Icon (replace with your number) -->
-  <a href="tel:+201020737555" class="contact-icon" title="Call Me">
-    <i class="fa-solid fa-phone"></i>
-  </a>
+    <!-- ======================================
+            PROJECTS
+    ======================================= -->
 
-  <!-- WhatsApp Icon (replace with your number) -->
-  <a href="https://wa.me/201020737555" target="_blank" class="contact-icon" title="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+    <section id="projects" class="section">
 
-  <!-- Email Icon (replace with your email) -->
-  <a href="mailto:seifzoir222@gmail.com" class="contact-icon" title="Email Me">
-    <i class="fa-solid fa-envelope"></i>
-  </a>
+        <div class="section-title">
 
-  <!-- LinkedIn Icon (replace with your profile link) -->
-  <a href="https://www.linkedin.com/in/seif-zoair-86a795226" target="_blank" class="contact-icon" title="LinkedIn">
-    <i class="fa-brands fa-linkedin-in"></i>
-  </a>
+            <span>Portfolio</span>
 
-  <!-- GitHub Icon (replace with your profile link) -->
-  <a href="https://github.com/seifzoir" target="_blank" class="contact-icon" title="GitHub">
-    <i class="fa-brands fa-github"></i>
-  </a>
-</div>
+            <h2>Featured Projects</h2>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Project -->
+
+            <article class="project-card">
+
+                <h3>E-Commerce Website Testing</h3>
+
+                <p>
+
+                    Comprehensive manual testing project
+                    covering authentication, shopping cart,
+                    checkout and bug reporting.
+
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Manual Testing</span>
+
+                    <span>Jira</span>
+
+                    <span>Bug Reports</span>
+
+                    <span>Test Cases</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#">
+                        GitHub
+                    </a>
+
+                    <a href="#">
+                        Documentation
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article class="project-card">
+
+                <h3>REST API Testing</h3>
+
+                <p>
+
+                    API testing collection built using
+                    Postman with assertions,
+                    response validation,
+                    and endpoint testing.
+
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Postman</span>
+
+                    <span>REST API</span>
+
+                    <span>JSON</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </section>
 
-  </div>
+    <!-- ======================================
+            CONTACT
+    ======================================= -->
 
-  <footer>
-    <p>&copy; 2026 Seif Zoair. All rights reserved.</p>
-  </footer>
+    <section id="contact" class="section">
+
+        <div class="section-title">
+
+            <span>Contact</span>
+
+            <h2>Let's Connect</h2>
+
+        </div>
+
+        <div class="contact-icons">
+
+            <a href="tel:+201020737555">
+
+                <i class="fa-solid fa-phone"></i>
+
+            </a>
+
+            <a href="https://wa.me/201020737555" target="_blank">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </a>
+
+            <a href="mailto:seifzoir222@gmail.com">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/seif-zoair-86a795226"
+                target="_blank">
+
+                <i class="fa-brands fa-linkedin"></i>
+
+            </a>
+
+            <a href="https://github.com/seifzoir"
+                target="_blank">
+
+                <i class="fa-brands fa-github"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================
+            FOOTER
+    ======================================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Seif Zoair • Built with HTML, CSS & JavaScript
+
+        </p>
+
+    </footer>
+
+    <!-- Back To Top -->
+
+    <button id="topBtn">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/scroll.js"></script>
 
 </body>
+
 </html>
